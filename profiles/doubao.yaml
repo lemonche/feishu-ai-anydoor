@@ -1,0 +1,4 @@
+model: "Doubao-Seed-2.0-Code"
+description: "豆包 - 字节自研代码模型"
+config_overrides: []
+system_prompt: ""

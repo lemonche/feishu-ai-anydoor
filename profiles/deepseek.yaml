@@ -1,0 +1,4 @@
+model: "DeepSeek-V4-Pro"
+description: "DeepSeek - 深度推理模型"
+config_overrides: []
+system_prompt: ""

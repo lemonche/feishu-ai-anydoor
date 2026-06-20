@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Runtime artifacts
+.bridge.pid
+.lark_event.log
+.session_state.json
+.feishu_events/
+.feishu_events_processed/
+.feishu_evt_test/
+.dead_letter/
+logs/
+*.log
+*.log.1
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Auth / secrets
+lark-auth-qr.png
+*.token
+
+# Local config with personal info
+settings.yaml.local

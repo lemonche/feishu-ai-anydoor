@@ -1,0 +1,4 @@
+model: "DeepSeek-V4-Pro"
+description: "默认配置 - DeepSeek-V4-Pro"
+config_overrides: []
+system_prompt: "在 `~/.agents`中查看当前自定义的skill清单,处理工作前,首先选择合适的skill"

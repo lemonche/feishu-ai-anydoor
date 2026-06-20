@@ -1,0 +1,28 @@
+active_backend: trae
+active_profile: default
+backends:
+  qwen:
+    config_overrides: []
+    path: qwen
+    session_id: feishu-bridge-qwen-001
+    session_timeout_seconds: 14400
+    timeout: 300
+    yolo: false
+  trae:
+    config_overrides: []
+    path: ~/.local/bin/traecli
+    session_id: feishu-bridge-session-001
+    session_timeout_seconds: 14400
+    timeout: 300
+    yolo: true
+bridge:
+  command_prefix: /
+  health_check_interval: 60
+  max_queue_size: 10
+  poll_interval: 0.5
+  status_update_interval: 10
+feishu:
+  chat_id: oc_your_chat_id_here
+  lark_cli: /path/to/lark-cli
+  my_open_id: ou_your_open_id_here
+profiles_dir: profiles

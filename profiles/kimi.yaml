@@ -1,0 +1,4 @@
+model: "Kimi-K2.6"
+description: "Kimi - 长上下文模型"
+config_overrides: []
+system_prompt: ""
