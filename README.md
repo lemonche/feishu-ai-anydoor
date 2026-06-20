@@ -1,5 +1,9 @@
 # Feishu AI Anydoor 🚀
 
+<div align="center">
+  <img src="docs/images/cover.png" alt="Feishu AI Anydoor" width="600">
+</div>
+
 > 飞书消息驱动多 AI CLI 的任意门 —— 统一调度各家大模型 CLI，按需切换，结果回传飞书。
 
 一个把飞书群聊作为统一入口、聚合调度多家 AI CLI 后端的服务。在飞书发一条消息，服务捕获后路由到指定的 AI CLI（Trae / Qwen / DeepSeek / 豆包 / Kimi 等）执行，结果以飞书富文本回传。
@@ -26,7 +30,7 @@
 - `/profile deepseek` —— 切换模型配置，按需使用各家额度
 - 多 Session 并行 —— 不同任务可分配不同后端，互不干扰
 
-### ⚙️ 工作流程
+### 工作流程
 
 ```
 飞书消息 → 事件订阅(NDJSON) → 落盘事件文件 → 消费者路由
@@ -36,6 +40,10 @@
 ---
 
 ## 🏛️ 架构
+
+<div align="center">
+  <img src="docs/images/architecture.png" alt="架构概念图" width="600">
+</div>
 
 ```
 ┌─────────────┐     NDJSON 流      ┌──────────────────┐
@@ -74,12 +82,12 @@
 - **运行时切换**：`/backend` 命令切换后端，`/profile` 切换模型配置，均无需重启
 - **多 Session 并行**：每个 Session 独立 TaskQueue，上下文隔离，可分配不同后端
 
-### 📡 飞书事件订阅
+### 飞书事件订阅
 - 基于 `lark-cli event consume` 的 NDJSON 流式消费
 - 事件落盘后异步处理，消费者崩溃不丢消息
 - 支持 `text` 与 `post`（富文本）两种消息类型
 
-### 📝 Markdown 富文本回传
+### Markdown 富文本回传
 - AI 回复以飞书 `post` 类型发送，表格 / 标题 / 代码块 / 列表正确渲染
 - 双通道发送：`send_feishu_markdown()` 走富文本，`send_reply()` 走纯文本
 
@@ -92,7 +100,7 @@
 | 指令任务 | 以 `/` 开头或含指令关键词 | "思考中" + 进度推送 + 元信息 |
 | 长任务 | 耗时 ≥8s 或多步骤 | 分步进度 + 心跳保活 |
 
-### 🛡️ 进程管理
+### 进程管理
 面向长时间运行的健壮性设计：
 
 - **PID 文件锁**：防止多实例，避免事件重复消费
@@ -173,9 +181,10 @@ feishu-ai-anydoor/
 ```
 
 ---
-## 🚀 快速开始
 
-### 📋 环境依赖
+## 快速开始
+
+### 环境依赖
 
 - Python 3.10+
 - [lark-cli](https://github.com/larksuite/cli)（飞书 CLI）
@@ -246,6 +255,6 @@ launchctl load ~/Library/LaunchAgents/com.feishu-ai-anydoor.plist
 
 ---
 
-## 📄 License
+## License
 
 MIT
